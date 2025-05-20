@@ -60,16 +60,4 @@ node server.js
 
 ---
 
-##  Frontend Setup
-
-1. Open the `/frontend` folder.
-
-2. Open `index.html` directly in your browser  
-   *OR* serve it using a local HTTP server like **Live Server** in VSCode  :
-
-3. Then open [http://localhost:8000](http://localhost:8000) in your browser.
-
-> The frontend will communicate with the backend at `http://localhost:3000`.
-
----
 
