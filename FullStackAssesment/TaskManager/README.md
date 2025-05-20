@@ -4,7 +4,7 @@ A simple full-stack task management application that allows users to create, vie
 
 ---
 
-## 🚀 Project Overview
+##  Project Overview
 
 This project consists of:
 
