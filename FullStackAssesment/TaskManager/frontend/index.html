@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f2f5;
+    }
+
+    .taskManager {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, textarea, select, button {
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    #taskContainer {
+      margin-top: 20px;
+    }
+
+    .taskCard {
+      background-color: #ffffff;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .taskCard h3 {
+      margin: 0 0 10px 0;
+    }
+
+    .button-box {
+      margin-top: 10px;
+      margin-right: 10px;
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .red {
+      color: white;
+      background-color: #e74c3c;
+      padding: 6px 10px;
+      border-radius: 4px;
+    }
+
+    .confirm {
+      display: none;
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: white;
+      border: 1px solid #ddd;
+      padding: 20px;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border-radius: 8px;
+    }
+
+    /* New overlay styles */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 9;
+      display: none; /* hidden by default */
+    }
+
+    .cancel, .confirmed {
+      padding: 10px 15px;
+      margin-top: 10px;
+      margin-right: 10px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .confirmed {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+    }
+
+    .cancel {
+      background-color: #ccc;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <section class="taskManager">
+    <header class="card">
+      <h1>Task Manager ✅</h1>
+      <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Task title..." required />
+        <textarea id="taskDescription" placeholder="Optional description..."></textarea>
+        <button type="submit">Add Task</button>
+      </form>
+    </header>
+
+    <section id="taskContainer"></section>
+  </section>
+
+  <!-- Overlay div added here -->
+  <!--<div class="overlay"></div>-->
+
+  <div class="confirm">
+    <h1>Confirm your action</h1>
+    <p>Are you <strong>really</strong> sure you want to delete this task?</p>
+    <button class="cancel">Cancel</button>
+    <button autofocus class="confirmed">Confirm</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
